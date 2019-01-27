@@ -4,11 +4,16 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
+    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://user:user123@ds211635.mlab.com:11635/seniorproject' || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
     options: {},
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
   },
+  port: process.env.PORT || 3000,
+  host: process.env.HOST || '0.0.0.0',
+  // DOMAIN config should be set to the fully qualified application accessible
+  // URL. For example: https://www.myapp.com (including port if required).
+  domain: process.env.DOMAIN || 'localhost:' + 3000,
   log: {
     // logging with Morgan - https://github.com/expressjs/morgan
     // Can specify one of 'combined', 'common', 'dev', 'short', 'tiny'
