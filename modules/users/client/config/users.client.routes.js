@@ -11,6 +11,16 @@
   function routeConfig($stateProvider) {
     // Users state routing
     $stateProvider
+    //leany addition
+    .state('BAC', {
+      url: '/BAC',
+      templateUrl: '/modules/core/client/views/BAC.client.view.html',
+      data: {
+        pageTitle: 'BAC Calculator'
+      }
+    })
+
+    //leany addition
       .state('settings', {
         abstract: true,
         url: '/settings',
