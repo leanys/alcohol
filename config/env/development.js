@@ -1,5 +1,4 @@
 'use strict';
-
 var defaultEnvConfig = require('./default');
 
 module.exports = {
@@ -30,8 +29,8 @@ module.exports = {
     title: defaultEnvConfig.app.title + ' - Development Environment'
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+    clientID: process.env.FACEBOOK_ID || 371048830159641,
+    clientSecret: process.env.FACEBOOK_SECRET || 'c274539c10129dbe48952f2cd1e2c194',
     callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
