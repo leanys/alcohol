@@ -12,9 +12,40 @@
     // Users state routing
     $stateProvider
     //leany addition
-    .state('BAC', {
-      url: '/BAC',
-      templateUrl: '/modules/core/client/views/BAC.client.view.html',
+    .state('searchResult', {
+      url: '/searchResult',
+      templateUrl: '/modules/core/client/views/searchResult.client.view.html',
+      data: {
+        pageTitle: 'Results'
+      }
+    })
+    .state('favorite', {
+      url: '/favoriteDrinks',
+      templateUrl: '/modules/core/client/views/favorite.client.view.html',
+      data: {
+        pageTitle: 'Favorite Drink'
+      }
+    })
+    
+    .state('day', {
+      url: '/drinkOfTheDay',
+      templateUrl: '/modules/core/client/views/day.client.view.html',
+      data: {
+        pageTitle: 'Drink of the Day'
+      }
+    })
+
+    .state('BACunauth', {
+      url: '/BAC-unauth',
+      templateUrl: '/modules/BAC/client/views/BAC.client.view.unauth.html',
+      data: {
+        pageTitle: 'BAC Calculator'
+      }
+    })
+
+    .state('BACauth', {
+      url: '/BAC-auth',
+      templateUrl: '/modules/BAC/client/views/BAC.client.view.auth.html',
       data: {
         pageTitle: 'BAC Calculator'
       }

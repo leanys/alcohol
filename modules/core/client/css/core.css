@@ -17,11 +17,12 @@
   color: white;
   font-size: 20px;
   line-height: 1.42857;
-  background-color: #68e866 !important;
-  border: 1px solid #68e866;
+  background-color: #68e866;
+  background: radial-gradient(circle farthest-side, #68e866, #2dc528) !important;
   padding: 10px;
   box-shadow: 5px 30px 60px #081408;
 }
+
 
 @media (min-width: 992px) {
   body {
