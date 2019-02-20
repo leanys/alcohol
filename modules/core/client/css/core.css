@@ -4,18 +4,21 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 
- @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Oswald|Source+Sans');
+ @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Oswald|Source+Sans|Raleway|Poppins');
 
 
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  color: #404040;
   padding-top: 54px;
  }
  
  h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans', sans-serif;
-  font-weight: 800;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  color:#585858;
+  
  }
 
 .btn-circle{
@@ -33,9 +36,9 @@ body {
   box-shadow: 5px 30px 60px #081408;
 }
 
-* {
+/** {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;;
- }
+ }*/
 
 @media (min-width: 992px) {
   body {
