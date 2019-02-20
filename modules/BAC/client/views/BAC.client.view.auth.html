@@ -1,0 +1,46 @@
+<div ng-app="BAC">
+    <div class="container" ng-controller="BACcontroller as vm">
+        <h1>BAC Calculator Page - AUTHENTICATED</h1>
+        <form>
+            <div class="input-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input id="weight" placeholder="Weight" class="form-control" type="number" name="weight" ng-model="vm.weight" autofocus oninvalid="alert('You must include weight!');" required>
+                        <input id="percent" placeholder="Percent Alcohol" class="form-control" type="number" max = "100" name="percent" ng-model="vm.percent" oninvalid="alert('You must include a percent value that is below 100%!');" required>
+                        <br>
+                        <br>
+                        <button type="submit" ng-click="vm.calculate()" class="btn btn-primary">Submit</button>
+                        <!--ng-disabled="!vm.messageText.length"  will have to do something like this for validation of numbers input-->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="sel1">Select Gender:</label>
+                            <select class="form-control" id="sel1" ng-model="vm.gender">
+                                <option>Female</option>
+                                <option>Male</option>
+                            </select>
+                        </div>
+                        <input id="hours" placeholder="Hours Elapsed" class="form-control" type="number" step=".1" name="hours" ng-model="vm.hours" oninvalid="alert('You must include hours!');" required>
+                    </div>
+                    <div class= "col-md-4">
+                        <input id="numberOf" placeholder="Number of" class="form-control" type="number" name="numberOf" ng-model="vm.numberOf">
+                        <div class="form-group">
+                            <label for="sel1">Select size:</label>
+                            <select class="form-control" id="sel1" ng-model="vm.amount">
+                                <option>Can(s)(12 oz)</option>
+                                <option>Pint(s)(16 oz)</option>
+                                <option>Shot(s)(1.5 oz)</option>
+                                <option>Glass(es)(5 oz)</option>
+                                <option>Ounces</option>
+                                <option>milliliters(mL)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <h2>Your BAC level is {{vm.sum}}</h2>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

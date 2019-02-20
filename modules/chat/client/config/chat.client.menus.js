@@ -10,8 +10,8 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Chat',
-      state: 'chat'
+      title: 'BAC',
+      state: 'BAC-unauth'
     });
   }
 }());
