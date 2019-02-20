@@ -12,6 +12,13 @@
     // Users state routing
     $stateProvider
     //leany addition
+    .state('browse', {
+      url: '/browse',
+      templateUrl: '/modules/core/client/views/browse.client.view.html',
+      data: {
+        pageTitle: 'Browse'
+      }
+    })
     .state('searchResult', {
       url: '/searchResult',
       templateUrl: '/modules/core/client/views/searchResult.client.view.html',

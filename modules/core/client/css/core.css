@@ -43,3 +43,38 @@
 .card {
   height: 100%;
 }
+
+label input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  margin-left: 2em;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox .glyphicon {
+  color: red;
+  position: absolute;
+  top: -0.2em;
+  left: -1.0em;
+  font-size: 2.2em;
+}
+
+.custom-checkbox .glyphicon-heart-empty {
+  color: gray;
+}
+
+.custom-checkbox .glyphicon-heart {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.custom-checkbox:hover .glyphicon-heart{
+  opacity: 0.5;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .glyphicon-heart {
+  opacity: 1;
+}

@@ -5,7 +5,7 @@
     .module('core')
     .controller('HomeController', HomeController);
   
-  HeaderController.$inject = ['$scope', '$state', 'Authentication'];
+  HomeController.$inject = ['$scope', '$state', 'Authentication'];
 
   function HomeController($scope, $state, Authentication) {
     var vm = this;
