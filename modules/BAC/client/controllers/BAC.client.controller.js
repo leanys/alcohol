@@ -14,6 +14,7 @@
     var g = '';
     vm.calculate = calculate;
     vm.hours = '';
+    vm.interpretation = "";
 
     function calculate() {
       var weight = vm.weight;
@@ -54,6 +55,13 @@
        console.log(sum);
        vm.sum = sum;
       //alert(sum);
+
+      if (sum < 0.08){
+        vm.interpretation = "You are within the legal limit and can safely drive!";
+      }
+      else {
+        vm.interpretation = "You are not within the legal limit. Do not drive.";
+      }
 
     }
   }

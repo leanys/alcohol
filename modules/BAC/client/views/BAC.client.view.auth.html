@@ -1,32 +1,41 @@
+
 <div ng-app="BAC">
-    <div class="container" ng-controller="BACcontroller as vm">
-        <h1>BAC Calculator Page - AUTHENTICATED</h1>
+    <div class="bac-container" ng-controller="BACcontroller as vm">
+        <h1 style = "text-align: center;">BAC Calculator</h1>
         <form>
-            <div class="input-group">
+            <div class="bac" style = "margin-left: 70px">
                 <div class="row">
-                    <div class="col-md-4">
-                        <input id="weight" placeholder="Weight" class="form-control" type="number" name="weight" ng-model="vm.weight" autofocus oninvalid="alert('You must include weight!');" required>
-                        <input id="percent" placeholder="Percent Alcohol" class="form-control" type="number" max = "100" name="percent" ng-model="vm.percent" oninvalid="alert('You must include a percent value that is below 100%!');" required>
-                        <br>
-                        <br>
-                        <button type="submit" ng-click="vm.calculate()" class="btn btn-primary">Submit</button>
-                        <!--ng-disabled="!vm.messageText.length"  will have to do something like this for validation of numbers input-->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="sel1">Select Gender:</label>
-                            <select class="form-control" id="sel1" ng-model="vm.gender">
-                                <option>Female</option>
-                                <option>Male</option>
-                            </select>
+                
+                    <div class="col-md-3">
+                        <div style="width: 150px; margin: auto;">
+                                <p>Gender</p>
+                                <div class="form-group" >
+                                    <!--<label for="sel1">Select Gender:</label>-->
+                                    <select class="form-control" id="sel1" ng-model="vm.gender">
+                                        <option>Female</option>
+                                        <option>Male</option>
+                                     </select>
+                                </div>
+                                <p>Weight</p>
+                                <input id="weight" style="width: 150px" class="form-control" type="number" name="weight"
+                                     ng-model="vm.weight" autofocus oninvalid="alert('You must include weight!');" required>
+                                <br><p>Hours elapsed</p>
+                                     <input id="hours" class="form-control" style="width: 150px" type="number" step=".5" name="hours" 
+                                         ng-model="vm.hours" oninvalid="alert('You must include hours!');" required>
                         </div>
-                        <input id="hours" placeholder="Hours Elapsed" class="form-control" type="number" step=".1" name="hours" ng-model="vm.hours" oninvalid="alert('You must include hours!');" required>
                     </div>
-                    <div class= "col-md-4">
-                        <input id="numberOf" placeholder="Number of" class="form-control" type="number" name="numberOf" ng-model="vm.numberOf">
+                    
+                        <!--ng-disabled="!vm.messageText.length"  will have to do something like this for validation of numbers input-->
+                    <div class="col-md-3">
+                        
+                        <p>Percent alcohol</p>
+                        <input id="percent" class="form-control" style="width: 150px" type="number" max = "100" name="percent" ng-model="vm.percent" oninvalid="alert('You must include a percent value that is below 100%!');" required>   
+                        <br><p>Number of drinks</p>
+                        <input id="numberOf" class="form-control" style="width: 150px" type="number" name="numberOf" ng-model="vm.numberOf">
+                        <br><p>Size</p>
                         <div class="form-group">
-                            <label for="sel1">Select size:</label>
-                            <select class="form-control" id="sel1" ng-model="vm.amount">
+                            <!--<label for="sel1">Select size:</label>-->
+                            <select class="form-control" id="sel1" style="width: 150px" ng-model="vm.amount">
                                 <option>Can(s)(12 oz)</option>
                                 <option>Pint(s)(16 oz)</option>
                                 <option>Shot(s)(1.5 oz)</option>
@@ -36,11 +45,30 @@
                             </select>
                         </div>
                     </div>
-                    <div class = "row">
-                        <h2>Your BAC level is {{vm.sum}}</h2>
+                    <div class="col-md-6" >  
+                        <p style = "text-align: center; color:#808080; size: 300px">Your BAC: </p>
+                        <h3 style="color:#2dc528; text-align: center;">{{vm.sum}} </h3>
+                        <p style = "text-align: center; size: 10cm;"> {{vm.interpretation}} </p>
+
                     </div>
+               
+                </div>
+                <div class = "row" style = "margin-left: 80px">
+                    <br>
+                        <button type="submit" class="btn btn-lg" ng-click="vm.calculate()" class="btn btn-primary" 
+                                style = "background-color: #68e866; width: 200px">Calculate</button> 
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<style>
+    h1 {
+       margin-left: auto;
+       padding-bottom: 3%;
+    }
+
+
+</style>
+
