@@ -24,6 +24,11 @@
       templateUrl: '/modules/core/client/views/searchResult.client.view.html',
       data: {
         pageTitle: 'Results'
+      },
+      params: {
+        'drinkIngredients': 'No Ingreidents', 
+        'recipe': 'No Recipe', 
+        'image': 'No Image'
       }
     })
     .state('favorite', {
