@@ -26,9 +26,7 @@
         pageTitle: 'Results'
       },
       params: {
-        'drinkIngredients': 'No Ingreidents', 
-        'recipe': 'No Recipe', 
-        'image': 'No Image'
+        'drinkArray': []
       }
     })
     .state('favorite', {
