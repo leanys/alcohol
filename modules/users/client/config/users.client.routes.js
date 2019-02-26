@@ -24,6 +24,9 @@
       templateUrl: '/modules/core/client/views/searchResult.client.view.html',
       data: {
         pageTitle: 'Results'
+      },
+      params: {
+        'drinkArray': []
       }
     })
     .state('favorite', {
