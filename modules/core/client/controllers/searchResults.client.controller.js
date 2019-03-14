@@ -16,7 +16,7 @@
               
         for(var i = 0; i < len; i++)
         {
-            vm.records[i] = {name: drinkArray[i].name, src: drinkArray[i].img};
+            vm.records[i] = {name: drinkArray[i].name, src: drinkArray[i].img, recipe: drinkArray[i].rec};
         }
     }
   }());
