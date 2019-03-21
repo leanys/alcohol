@@ -2,26 +2,14 @@
     <div id="products" class="row list-group">
         <div class="row">
             <div class="item col-md-12">
-                <div class="thumbnail" ng-repeat="x in vm.records"  ng-click="isFlipped=!isFlipped" style=" display: inline-block; width: 30%; margin-right:20px;">
-                    <div class="front">
-                        <img class="group list-group-image" ng-hide="isFlipped" src={{x.src}} alt="" style="height:340px; width:340px"/>
-                        <div class="caption" ng-hide="isFlipped">
+                <div class="thumbnail" ng-repeat="x in vm.records"  style=" display: inline-block; width: 30%; margin-right:20px;">
+                        <img class="group list-group-image" src={{x.src}} alt="" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)"/>
+                        <div class="caption" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)">
                             <h4 class="group inner list-group-item-heading">
                                 {{x.name}}</h4>
                             <p class="group inner list-group-item-text">
                                 {{x.recipe}}</p>
-                                <p class="group inner list-group-item-text">
-                                    {{x.ingredients}}</p>
                         </div>
-                    </div>
-                    <div class="back" ng-hide="!isFlipped">
-                        <h4 class="group inner list-group-item-heading">
-                            {{x.name}}</h4>
-                        <h5>Ingredients: </h5>
-                        {{x.ingredients}}
-                        <h5>Recipe: </h5>
-                        {{x.recipe}}
-                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <label class="custom-checkbox">
@@ -31,7 +19,7 @@
                             </label>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mydModal">Open Modal</button>
+                            <button type="button" class="btn btn-success btn-lg">Add to BAC</button>
                         </div>
                     </div>
                     <div class ="row" ng-bind="ImCheap"></div>
@@ -43,4 +31,3 @@
     </div>
 </div>
 
-<!-- ng-class="{'flipped':isFlipped}" -->

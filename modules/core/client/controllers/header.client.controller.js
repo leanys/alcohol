@@ -144,8 +144,9 @@
                 image = data.drinks[i].strDrinkThumb;
               }
               
-              drinkIngredients = drinkIngredients.slice(0, -1);
+              drinkIngredients = drinkIngredients.substring(0, drinkIngredients.length - 2);
               drinkArray[i] = {ingredients: drinkIngredients, rec:recipe, img:image, name:name};
+              drinkIngredients = '';
           }
           return drinkArray;
       

@@ -70,7 +70,7 @@ label input[type="checkbox"] {
   color: red;
   position: absolute;
   top: -0.2em;
-  left: -1.0em;
+  left: -.80em;
   font-size: 2.2em;
 }
 
@@ -105,9 +105,12 @@ label input[type="checkbox"] {
   /* height:100%; */
 }
 
-.ng-cloak{
-  display: none;
-}
-
+.modal {
+  overflow-y: auto;
+ }
+ 
+ .modal-open {
+  overflow: auto;
+ }
 
 
