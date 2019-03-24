@@ -12,6 +12,15 @@
     // Users state routing
     $stateProvider
     //leany addition
+    .state('modal', {
+      url: '/modal',
+      templateUrl: '/modules/core/client/views/modal.client.view.html',
+      controller: 'modalController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Modal'
+      }
+    })
     .state('browse', {
       url: '/browse',
       templateUrl: '/modules/core/client/views/browse.client.view.html',

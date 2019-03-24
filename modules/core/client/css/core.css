@@ -56,10 +56,6 @@ body {
   -o-background-size: cover;
 }
 
-.card {
-  height: 100%;
-}
-
 label input[type="checkbox"] {
   display: none;
 }
@@ -74,7 +70,7 @@ label input[type="checkbox"] {
   color: red;
   position: absolute;
   top: -0.2em;
-  left: -1.0em;
+  left: -.80em;
   font-size: 2.2em;
 }
 
@@ -94,3 +90,27 @@ label input[type="checkbox"] {
 .custom-checkbox input[type="checkbox"]:checked ~ .glyphicon-heart {
   opacity: 1;
 }
+.thumbnail p{
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 40px;
+  
+}
+
+.thumbnail:hover{
+  box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+  transform: translate3d(0,0,0);
+  transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  /* height:100%; */
+}
+
+.modal {
+  overflow-y: auto;
+ }
+ 
+ .modal-open {
+  overflow: auto;
+ }
+
+

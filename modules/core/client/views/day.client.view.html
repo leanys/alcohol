@@ -1,1 +1,15 @@
-Drink Of the Day!
+<div ng-controller="dayController as vm">
+        <div class="flip"> 
+            <div class="thumbnail" ng-repeat="x in vm.records" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped" style=" display: inline-block; width: 30%; margin-right:20px"> 
+                <div class="front"> 
+                    <img class="group list-group-image" ng-hide="isFlipped" src= {{x.src}} alt="" style="width: 18.75em; height: 12.5em;"/>
+                    front
+                </div> 
+                <div class="back" ng-hide="!isFlipped"> 
+                    {{x.name}}
+                    
+                </div> 
+            </div> 
+        </div> 
+    </div>
+</div>

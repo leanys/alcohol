@@ -1,31 +1,33 @@
 <div class="container" ng-controller="SearchResultsController as vm">
-        <div id="products" class="row list-group">
-            <div class = "row">
+    <div id="products" class="row list-group">
+        <div class="row">
             <div class="item col-md-12">
-                <div class="thumbnail" ng-repeat="x in vm.records" style=" display: inline-block; width: 30%; margin-right:20px">
-                    <img class="group list-group-image" src= {{x.src}} alt="" />
-                    <div class="caption">
-                        <h4 class="group inner list-group-item-heading">
-                            {{x.name}}</h4>
-                        <p class="group inner list-group-item-text">
-                            Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                    <label  class="custom-checkbox">
-                                            <input type="checkbox" id="id-of-input"/>
-                                            <i class="glyphicon glyphicon-heart-empty"></i>
-                                            <i class="glyphicon glyphicon-heart"></i>
-                                          </label>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                            </div>
+                <div class="thumbnail" ng-repeat="x in vm.records"  style=" display: inline-block; width: 30%; margin-right:20px;">
+                        <img class="group list-group-image" src={{x.src}} alt="" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)"/>
+                        <div class="caption" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)">
+                            <h4 class="group inner list-group-item-heading">
+                                {{x.name}}</h4>
+                            <p class="group inner list-group-item-text">
+                                {{x.recipe}}</p>
+                        </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="id-of-input" />
+                                <i class="glyphicon glyphicon-heart-empty"></i>
+                                <i class="glyphicon glyphicon-heart"></i>
+                            </label>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <button type="button" class="btn btn-success btn-lg">Add to BAC</button>
                         </div>
                     </div>
+                    <div class ="row" ng-bind="ImCheap"></div>
+
                 </div>
+
             </div>
         </div>
-        </div>
     </div>
-    
+</div>
+
