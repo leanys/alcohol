@@ -6,63 +6,105 @@
     <div class="bac-container" ng-controller="BACcontroller as vm">
         <h1 style = "text-align: center;">BAC Calculator</h1>
         <form>
-            <div class="bac" style = "margin-left: 70px">
+            <div class="bac" style = "margin-left: 70px;">
                 <div class="row">
-                
-                    <div class="col-md-3">
-                        <div style="width: 150px; margin: auto;">
-                                <p>Gender</p>
-                                <div class="form-group" >
-                                    <!--<label for="sel1">Select Gender:</label>-->
-                                    <select class="form-control" id="sel1" ng-model="vm.gender" required>
-                                        <option>Female</option>
-                                        <option>Male</option>
-                                     </select>
+                    <div class="col-md-5" style= " background-color: #F7F7F7">
+                        <br> 
+                        <uib-tabset type="pills" style="height:400px;">
+                            
+                            <uib-tab heading="Add a Drink"  style="margin-left: 90px;">
+                                <br><br>
+                                <div class="col-md-6" style="width: 180px; margin-left: 30px;">
+                                    <p>Gender</p>
+                                    <div class="form-group">
+                                        <!--<label for="sel1">Select Gender:</label>-->
+                                        <select class="form-control" id="sel1" ng-model="vm.gender" required>
+                                            <option>Female</option>
+                                            <option>Male</option>
+                                        </select>
+                                    </div>
+                                    <p>Weight</p>
+                                    <input id="weight" style="width: 150px" class="form-control" type="number" min="1" name="weight"
+                                        ng-model="vm.weight" autofocus required>
+                                    <br>
+                                    <p>Hours elapsed</p>
+                                    <input id="hours" class="form-control" style="width: 150px" type="number" min="1" step=".5" name="hours"
+                                        ng-model="vm.hours" required>
                                 </div>
-                                <p>Weight</p>
-                                <input id="weight" style="width: 150px" class="form-control" type="number" min="1" name="weight"
-                                     ng-model="vm.weight" autofocus required>
-                                <br><p>Hours elapsed</p>
-                                     <input id="hours" class="form-control" style="width: 150px" type="number" min="1" step=".5" name="hours" 
-                                         ng-model="vm.hours" required>
-                        </div>
+                                <div class="col-md-6" >
+                                    <p>Percent alcohol</p>
+                                    <input id="percent" class="form-control" style="width: 150px" type="number" min="1" max="100" name="percent"
+                                        ng-model="vm.percent" required>
+                                    <br>
+                                    <p>Number of drinks</p>
+                                    <input id="numberOf" class="form-control" style="width: 150px" type="number" min="1" name="numberOf"
+                                        ng-model="vm.numberOf" required>
+                                    <br>
+                                    <p>Size</p>
+                                    <div class="form-group">
+                                        <!--<label for="sel1">Select size:</label>-->
+                                        <select class="form-control" id="sel1" style="width: 150px" ng-model="vm.amount">
+                                            <option>Can(s)(12 oz)</option>
+                                            <option>Pint(s)(16 oz)</option>
+                                            <option>Shot(s)(1.5 oz)</option>
+                                            <option>Glass(es)(5 oz)</option>
+                                            <option>Ounces</option>
+                                            <option>milliliters(mL)</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row" style="margin-left: 140px;">
+                                        
+                                        <button type="submit" class="btn btn-md" ng-click="vm.calculate()" class="btn btn-primary"
+                                            style="background-color: #68e866; width: 120px">Calculate</button>
+                                    </div>
+                                <br>
+                            </uib-tab>
+                                   
+                                    <uib-tab heading="Drink Log">
+                                            <br><br>
+                                            <div style="overflow:scroll; height:300px;">
+                                                    <table class="table">
+                                                            <thead>
+                                                              <tr>
+                                                                
+                                                                <th scope="col">Percent</th>
+                                                                <th scope="col"># of</th>
+                                                                <th scope="col">Size</th>
+                                                                <th scope="col">Hours Elapsed</th>
+                                                                <th scope="col"> </th>
+        
+                                                              </tr>
+                                                            </thead>
+                                                            <tbody ng-repeat="x in vm.drinksGiven">
+                                                              <tr>
+                                                                <td>{{x}}</td>
+                                                                <td>Otto</td>
+                                                                <td>Otto</td>
+                                                                <td>@mdo</td>
+                                                                <td><span class="table-remove"><button type="button" class="btn btn-sm" style="background-color: #D8FFD2">Remove</button></span></td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                            </div>
+                                            
+                                    </uib-tab>
+                            </uib-tabset>
+                        
                     </div>
                     
                         <!--ng-disabled="!vm.messageText.length"  will have to do something like this for validation of numbers input-->
-                    <div class="col-md-3">
-                        
-                        <p>Percent alcohol</p>
-                        <input id="percent" class="form-control" style="width: 150px" type="number" min="1" max = "100" name="percent" ng-model="vm.percent" required>   
-                        <br><p>Number of drinks</p>
-                        <input id="numberOf" class="form-control" style="width: 150px" type="number" min="1" name="numberOf" ng-model="vm.numberOf" required>
-                        <br><p>Size</p>
-                        <div class="form-group">
-                            <!--<label for="sel1">Select size:</label>-->
-                            <select class="form-control" id="sel1" style="width: 150px" ng-model="vm.amount">
-                                <option>Can(s)(12 oz)</option>
-                                <option>Pint(s)(16 oz)</option>
-                                <option>Shot(s)(1.5 oz)</option>
-                                <option>Glass(es)(5 oz)</option>
-                                <option>Ounces</option>
-                                <option>milliliters(mL)</option>
-                            </select>
-                        </div>
-                        <div class = "row" style = "margin-left: 80px">
-                            <br><br>
 
-                                <button type="submit" class="btn btn-lg" ng-click="vm.calculate()" class="btn btn-primary" 
-                                        style = "background-color: #68e866; width: 140px">Calculate</button> 
-                        </div>
-                    </div>
 
-                    <div class="col-md-6" >  
+                    <div class="col-md-7">  
                         <!--<h2 style = "text-align: center; color:#808080;">Your BAC: </h2>
                         <h3 style="color:#2dc528; text-align: center;">{{vm.sum}} </h3>
                         <p style = "text-align: center; size: 10cm;"> {{vm.interpretation}} </p>-->
-                        <div zingchart id="myChart" zc-json="myJson" zc-height=350 zc-width=400></div>
+                        <div zingchart id="myChart" zc-json="myJson" zc-height=450 zc-width=550></div>
                         <!--<zingchart id="myChart" zc-json="myJson" zc-height=500 zc-width=600></zingchart>-->
                     </div>
-               
+                    <div class="row"></div>
                 </div>
                 
             </div>
@@ -78,6 +120,10 @@
     .myChart{
         font-family: 'Courier New', Courier, monospace
     }
+    .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #7D807D;
+}
 
 </style>
 
