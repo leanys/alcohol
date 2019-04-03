@@ -1,3 +1,6 @@
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="zingchart.min.js"></script>
+<script type="text/javascript" src="zingchart-angularjs.js"></script>
 <body>
 <div ng-app="BAC">
     <div class="bac-container" ng-controller="BACcontroller as vm">
@@ -44,20 +47,24 @@
                                 <option>milliliters(mL)</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="col-md-6" >  
-                        <h2 style = "text-align: center; color:#808080;">Your BAC: </h2>
-                        <h3 style="color:#2dc528; text-align: center;">{{vm.sum}} </h3>
-                        <p style = "text-align: center; size: 10cm;"> {{vm.interpretation}} </p>
+                        <div class = "row" style = "margin-left: 80px">
+                            <br><br>
 
+                                <button type="submit" class="btn btn-lg" ng-click="vm.calculate()" class="btn btn-primary" 
+                                        style = "background-color: #68e866; width: 140px">Calculate</button> 
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" >  
+                        <!--<h2 style = "text-align: center; color:#808080;">Your BAC: </h2>
+                        <h3 style="color:#2dc528; text-align: center;">{{vm.sum}} </h3>
+                        <p style = "text-align: center; size: 10cm;"> {{vm.interpretation}} </p>-->
+                        <div zingchart id="myChart" zc-json="myJson" zc-height=350 zc-width=400></div>
+                        <!--<zingchart id="myChart" zc-json="myJson" zc-height=500 zc-width=600></zingchart>-->
                     </div>
                
                 </div>
-                <div class = "row" style = "margin-left: 80px">
-                    <br>
-                        <button type="submit" class="btn btn-lg" ng-click="vm.calculate()" class="btn btn-primary" 
-                                style = "background-color: #68e866; width: 200px">Calculate</button> 
-                </div>
+                
             </div>
         </form>
     </div>
@@ -68,7 +75,9 @@
        margin-left: auto;
        padding-bottom: 3%;
     }
-
+    .myChart{
+        font-family: 'Courier New', Courier, monospace
+    }
 
 </style>
 
