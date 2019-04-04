@@ -4,18 +4,18 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 
- @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Quicksand:700|Work+Sans:700|Roboto|Oswald|Spectral:700|Raleway:700|Poppins');
+ @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Permanent+Marker|Quicksand:700|Work+Sans:700|Roboto|Oswald|Spectral:700|Raleway|Poppins');
 
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #7B8689;
   padding-top: 54px;
  }
  
  h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Permanent Marker', sans-serif;
   font-weight: 700;
   color:#5A6168;
   
