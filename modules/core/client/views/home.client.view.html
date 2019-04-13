@@ -42,15 +42,17 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-sm-8">
-          <h2 class="mt-4">What We Do</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-          <p>
-            <a class="btn btn-lg" style = "background-color: #68e866" href="#">Call to Action &raquo;</a>
+        <div  style = "width: 600px; margin: 0 auto; text-align: center">
+          <br><h2 class="mt-4" style="font-size: 40px; letter-spacing: 4px; color: #7AE550">Welcome to Boozy</h2>
+          <p> We have you covered on your nights out. Or your mornings, your afternoons... We don't judge.
+            Explore our extensive database of cocktail recipes, use out BAC calculator to make sure you're drinking
+            responsibly, or take our cocktail quiz to get a handpicked reccommendation just for you.  
+           </p>
+          <p> <br><br>
+            
           </p>
         </div>
-        <div class="col-sm-4">
+        <!--<div class="col-sm-4">
           <h2 class="mt-4">Contact Us</h2>
           <address>
             <strong>Start Bootstrap</strong>
@@ -67,48 +69,48 @@
           </address>
         </div>
       </div>
-      <!-- /.row -->
+      -->
 
       <div class="row">
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="https://marketplace.canva.com/MADGxxaoWDY/4/screen/canva-clear-drinking-glass-with-slice-lemon-MADGxxaoWDY.jpg" alt="" style="width:300px;height:200px;">
+        <div class="col-sm-4 my-4" >
+          <div class="card" style=  "text-align: center;">
+            <img class="card-img-top" ui-sref="favorite"src="https://marketplace.canva.com/MADGxxaoWDY/4/screen/canva-clear-drinking-glass-with-slice-lemon-MADGxxaoWDY.jpg" alt="" style="width:250px;height:250px;"">
             <div class="card-body">
               <h4 class="card-title">Favorite Drinks</h4>
               <p class="card-text">Lorem ipsum dolor sit amet.</p>
             </div>
-            <span ng-if="vm.authentication.user">
+           <!--<span ng-if="vm.authentication.user">
                 <div class="card-footer">
                   <a ui-sref="favorite" class="btn btn-primary">My Favorite Drinks!</a>
                 </div>
               </span>
               <span ng-if="!vm.authentication.user">
               <div class="card-footer">
-                <a ui-sref="BACunauth" class="btn btn-primary">My Favorite Drinks!</a> <!--Have to edit where this goes to decide what we are going to do if unauth -->
-              </div>
+                <a ui-sref="BACunauth" class="btn btn-primary">My Favorite Drinks!</a> 
+              </div>--> 
           </div>
         </div>
         <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="https://images.pexels.com/photos/1656542/pexels-photo-1656542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width:300px;height:200px;">
+          <div class="card" style= "text-align: center; ">
+            <img class="card-img-top" ui-sref="day" src="https://images.pexels.com/photos/1656542/pexels-photo-1656542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width:250px;height:250px;">
             <div class="card-body">
-              <h4 class="card-title">Drink of the Day</h4>
+              <h4 class="card-title" ui-sref="day" >Drink of the Day</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="card-footer">
-              <a ui-sref="day" class="btn btn-primary">Go to Drink of the Day!</a>
+              <!--<a ui-sref="day" class="btn btn-primary">Go to Drink of the Day!</a>-->
             </div>
           </div>
         </div>
         <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="https://images.pexels.com/photos/1232152/pexels-photo-1232152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width:300px;height:200px;">
+          <div class="card" style= "text-align: center">
+            <img class="card-img-top" ui-sref="browse" src="https://images.pexels.com/photos/1232152/pexels-photo-1232152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" style="width:250px;height:250px;>
             <div class="card-body">
               <h4 class="card-title">Browse Drinks</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
             <div class="card-footer">
-              <a ui-sref="browse" class="btn btn-primary">Browse Drinks!</a>
+              
             </div>
             <!-- <span ng-if="vm.authentication.user">
               <div class="card-footer">
@@ -142,5 +144,17 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
-
+<style>
+  img {
+    height: 50px;
+   width: 50px;
+   border-radius: 50%;
+}
+img:hover {
+  opacity: 0.4%;
+  -webkit-opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity=50);
+} 
+</style>
 </html>
