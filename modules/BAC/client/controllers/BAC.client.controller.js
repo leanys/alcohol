@@ -17,6 +17,7 @@
     vm.calculate = calculate;
     vm.hours = '';
     vm.interpretation = "";
+    vm.drinksGiven= ["11", "2","7", "8","9","10", "16", "82"];
 
     window.feed = function(callback) {
       var tick = {};
@@ -85,7 +86,7 @@
             }
           ]
         },
-        labels:['0','','','','','','','','','.08','','','','','','','','','','','','.20','','','','','.25'],
+        labels:['0','','','','','','','','.08','','','','','','','','','','','','.20','','','','','.25'],
         ring:{
           size:40,
           rules:[
@@ -175,7 +176,7 @@
       else {
         vm.interpretation = "You are not within the legal limit. Do not drive.";
       }
-
+      
     }
   }
 }());
