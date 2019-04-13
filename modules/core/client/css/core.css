@@ -14,11 +14,16 @@ body {
   padding-top: 54px;
  }
  
- h1, h2, h3, h4, h5, h6 {
-  font-family: 'Permanent Marker', sans-serif;
+ h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   color:#5A6168;
   
+ }
+ h6{
+  font-family: 'Permanent Marker', sans-serif;
+  font-weight: 700;
+  color:#5A6168;
  }
 
 .btn-circle{
