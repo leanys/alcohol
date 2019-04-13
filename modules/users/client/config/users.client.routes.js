@@ -12,6 +12,30 @@
     // Users state routing
     $stateProvider
     //leany addition
+    .state('qResult', {
+      url: '/qResult',
+      templateUrl: '/modules/core/client/views/result.client.view.html',
+      controller: 'resultController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'qResults'
+      },
+      params: {
+        'drinkArray': []
+      }
+    })
+
+    .state('quiz', {
+      url: '/quiz',
+      templateUrl: '/modules/core/client/views/quiz.client.view.html',
+      controller: 'quiController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'quiz'
+        // css:'/modules/core/client/css/modern-business.css'
+      }
+    })
+    
     .state('modal', {
       url: '/modal',
       templateUrl: '/modules/core/client/views/modal.client.view.html',
@@ -45,6 +69,7 @@
         pageTitle: 'Favorite Drink'
       }
     })
+
     
     .state('day', {
       url: '/drinkOfTheDay',
