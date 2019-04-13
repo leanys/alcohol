@@ -1,0 +1,30 @@
+<div class="container fill" ng-repeat="x in vm.records">
+    <div class="row">
+        <div class ="col-md-12">
+        <h1>Your Result is: {{x.name}}</h1>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div class = "thumbnail">
+            <img class="rounded float-left" src={{x.src}} alt=""> 
+        </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <h2>Ingredients:</h2>
+            <p>{{x.ingredients}}</p>
+            <h2>Recipe:</h2>
+            <p>{{x.recipe}}</p>
+            <br>
+                    <a href="#" class="btn btn-md btn-danger">Add to Favorites <span class="glyphicon glyphicon-heart-empty"></span></a>
+                    <button type="button" class="btn btn-success btn-md">Add to BAC</button>
+                    <button type="button" ui-sref="quiz" class="btn btn-info btn-md">Take the quiz again!</button>
+
+         
+        </div>
+        
+        
+    </div>
+</div>
