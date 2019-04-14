@@ -1,1 +1,64 @@
-<h1>Browse Drinks Page</h1>
+<div class="container" ng-controller="browseController as vm" autoscroll="true">
+    <div class = "row">
+  <center>
+    <h1>Browse Drinks By Alphabet</h1>
+            <h3> <button ng-click="searchFunc('A')" style="background:none">A</button>
+                <button ng-click="searchFunc('B')" style="background:none">B</button>
+                <button ng-click="searchFunc('C')" style="background:none">C</button>
+                <button ng-click="searchFunc('D')" style="background:none">D</button>
+                <button ng-click="searchFunc('E')" style="background:none">E</button>
+                <button ng-click="searchFunc('F')" style="background:none">F</button>
+                <button ng-click="searchFunc('G')" style="background:none">G</button>
+                <button ng-click="searchFunc('H')" style="background:none">H</button>
+                <button ng-click="searchFunc('I')" style="background:none">I</button>
+                <button ng-click="searchFunc('J')" style="background:none">J</button>
+                <button ng-click="searchFunc('K')" style="background:none">K</button>
+                <button ng-click="searchFunc('L')" style="background:none">L</button>
+                <button ng-click="searchFunc('M')" style="background:none">M</button>
+                <button ng-click="searchFunc('N')" style="background:none">N</button>
+                <button ng-click="searchFunc('O')" style="background:none">O</button>
+                <button ng-click="searchFunc('P')" style="background:none">P</button>
+                <button ng-click="searchFunc('Q')" style="background:none">Q</button>
+                <button ng-click="searchFunc('R')" style="background:none">R</button>
+                <button ng-click="searchFunc('S')" style="background:none">S</button>
+                <button ng-click="searchFunc('T')" style="background:none">T</button>
+                <button ng-click="searchFunc('U')" style="background:none">U</button>
+                <button ng-click="searchFunc('V')" style="background:none">V</button>
+                <button ng-click="searchFunc('W')" style="background:none">W</button>
+                <button ng-click="searchFunc('X')" style="background:none">X</button>
+                <button ng-click="searchFunc('Y')" style="background:none">Y</button>
+                <button ng-click="searchFunc('Z')" style="background:none">Z</button>
+                 </h3> </center>
+</div>
+        <div id="products" class="row list-group">
+            <div class="row">
+                <div class="item col-md-12">
+                    <div class="thumbnail" ng-repeat="x in vm.records track by $index" style=" display: inline-block; width: 30%; margin-right:20px;">
+                        <!-- <script>if (x.name[0] != 'a'){++x;};</script> -->
+                            <img class="group list-group-image" src={{x.src}} alt="" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)"/>
+                            <div class="caption" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)">
+                                <h4 class="group inner list-group-item-heading">
+                                    {{x.name}}</h4>
+                                <p class="group inner list-group-item-text">
+                                    {{x.recipe}}</p>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-12 col-md-6">
+                                <label style="float:left;" class="custom-checkbox">
+                                    <input type="checkbox" id="id-of-input" />
+                                    <i class="glyphicon glyphicon-heart-empty"></i>
+                                    <i class="glyphicon glyphicon-heart"></i>
+                                </label>
+                            </div>
+                            <div class="col-md-12 col-md-6">
+                                <button type="button" style="float:right;" class="btn btn-success btn-md">Add to BAC</button>
+                            </div>
+                        </div>
+                        <div class ="row" ng-bind="ImCheap"></div>
+    
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>

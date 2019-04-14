@@ -33,7 +33,7 @@
     </ul> -->
     <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
       <li ui-sref-active="active">
-        <a ui-sref="day">Drink of the Day!</a>
+        <a ng-click="dayFunc()">Drink of the Day!</a>
       </li>
       <li ui-sref-active="active">
         <a ui-sref="BACunauth">BAC Calculator</a>
@@ -51,7 +51,7 @@
         <a ui-sref="favorite">My Favorite Drinks!</a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="day">Drink of the Day!</a>
+          <a ng-click="dayFunc()">Drink of the Day!</a>
       </li>
       <li ui-sref-active="active">
         <a ui-sref="BACauth">BAC Calculator</a>

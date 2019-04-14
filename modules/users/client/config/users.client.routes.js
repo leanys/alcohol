@@ -50,6 +50,10 @@
       templateUrl: '/modules/core/client/views/browse.client.view.html',
       data: {
         pageTitle: 'Browse'
+      },
+      params: {
+        'drinkArray': [],
+        'letter': String
       }
     })
     .state('searchResult', {
@@ -76,6 +80,9 @@
       templateUrl: '/modules/core/client/views/day.client.view.html',
       data: {
         pageTitle: 'Drink of the Day'
+      },
+      params: {
+        'drinkArray': []
       }
     })
 
