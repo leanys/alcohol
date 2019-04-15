@@ -58,6 +58,98 @@
       };
 
       req.send(); 
+      function displayDrinks(data) 
+      {
+        drinkArray = [];
+          for (var i = 0; i < data.drinks.length; i++) 
+          {
+              if (data.drinks[i].strIngredient1 != "") 
+              {
+                  drinkIngredients += data.drinks[i].strIngredient1 + ", ";
+              }
+              
+              if (data.drinks[i].strIngredient2 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient2 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient3 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient3 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient4 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient4 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient5 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient5 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient6 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient6 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient7 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient7 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient8 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient8 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient9 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient9 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient10 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient10 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient11 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient11 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient12 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient12 + ", ";
+              }
+  
+              if (data.drinks[i].strIngredient13 != "")
+              {
+                  drinkIngredients += data.drinks[i].strIngredient13 + ", ";
+              }             
+             
+              if (data.drinks[i].strInstructions != "") 
+              {
+                recipe = data.drinks[i].strInstructions + ".";
+              }
+
+              if(data.drinks[i].strDrink != "")
+              {
+                name = data.drinks[i].strDrink;
+              }
+
+              if(data.drinks[i].strDrinkThumb != "")
+              {
+                image = data.drinks[i].strDrinkThumb;
+              }
+              
+              drinkIngredients = drinkIngredients.substring(0, drinkIngredients.length - 2);
+              drinkArray[i] = {ingredients: drinkIngredients, rec:recipe, img:image, name:name};
+              drinkIngredients = '';
+          }
+          return drinkArray;
+      
+      }
     }
 
 
