@@ -1,6 +1,23 @@
-<div class = "container">
-        <h1>Would you like to login?</h1>
-        <a ui-sref="BACunauth" class="btn btn-primary">Go to BAC Calculator!</a>
+<body>
+        <div class = "div1">
+                <h1>Would you like to login?</h1>
+        </div>
+        <div class = "div2">
+                <a ui-sref="authentication.signin" type="submit" class="btn btn-lg" class="btn btn-primary" 
+                         style = "background-color: #68e866; color: black;">Sign in</a>
+                <a ui-sref="BACauth" type="submit" class="btn btn-lg" class="btn btn-primary" 
+                        style = "background-color: #68e866; color: black;">Use as guest</a>
+        </div>
 
-</div>
+</body>
+<style>
+ .div1{
+        margin-left: 38%;
 
+ } 
+ .div2{
+        margin-left: 40%;
+ }
+ 
+     
+</style>

@@ -4,17 +4,20 @@ angular
 .module('core')
 .controller('dayController', dayController);
 
-dayController.$inject = ["$scope"];
+dayController.$inject = ["$scope","$stateParams"];
 
-function dayController($scope) {
+function dayController($scope, $stateParams) {
  
   console.log("this is day controller");
   var vm = this;
-  vm.records = [
-    {name:'Bamboo', src:'https://images.pexels.com/photos/1418358/pexels-photo-1418358.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'},
-    {name:'Bellini', src:'https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'},
-    {name:'Painkiller', src:'https://images.pexels.com/photos/128242/pexels-photo-128242.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'},
-    {name:'Vesper', src:'https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'}
-  ]
+  vm.records = [];
+  var len = $stateParams['drinkArray'].length;
+  var drinkArray = $stateParams['drinkArray'];
+
+    for(var i = 0; i < len; i++)
+    {
+        vm.records[i] = {name: drinkArray[i].name, src: drinkArray[i].img, 
+            recipe: drinkArray[i].rec, ingredients: drinkArray[i].ingredients};
+    }
 }
 }());

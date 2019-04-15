@@ -12,6 +12,30 @@
     // Users state routing
     $stateProvider
     //leany addition
+    .state('qResult', {
+      url: '/qResult',
+      templateUrl: '/modules/core/client/views/result.client.view.html',
+      controller: 'resultController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'qResults'
+      },
+      params: {
+        'drinkArray': []
+      }
+    })
+
+    .state('quiz', {
+      url: '/quiz',
+      templateUrl: '/modules/core/client/views/quiz.client.view.html',
+      controller: 'quiController',
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'quiz'
+        // css:'/modules/core/client/css/modern-business.css'
+      }
+    })
+    
     .state('modal', {
       url: '/modal',
       templateUrl: '/modules/core/client/views/modal.client.view.html',
@@ -26,6 +50,10 @@
       templateUrl: '/modules/core/client/views/browse.client.view.html',
       data: {
         pageTitle: 'Browse'
+      },
+      params: {
+        'drinkArray': [],
+        'letter': String
       }
     })
     .state('searchResult', {
@@ -43,6 +71,9 @@
       templateUrl: '/modules/core/client/views/day.client.view.html',
       data: {
         pageTitle: 'Drink of the Day'
+      },
+      params: {
+        'drinkArray': []
       }
     })
 

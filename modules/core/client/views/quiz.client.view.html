@@ -1,0 +1,193 @@
+<!-- <link rel=”stylesheet” href=”./css/modern-business.css”> -->
+
+<body>
+    <div class="container-fluid">
+        <div ng-switch="vm.next">
+            <div ng-switch-default>
+                <form  name= "q1" ng-submit="vm.answerArray(0,zero)" validate>
+                <div class="row">
+                    <br>
+                    <div class="question">
+                        <h3>
+                            <span class="label label-warning" id="qid">1</span>
+                            <span id="question"> {{vm.some_object[1].questionText}}</span>
+                        </h3>
+                    </div>
+                    <ulx>
+                        <lix>
+                            <input type="radio" ng-model="zero" id="f-option" name="selector" ng-value="1" required>
+                            <label for="f-option" class="element-animation">{{vm.some_object[1].answers[0]}}</label>
+                            <div class="check"></div>
+                        </lix>
+
+                        <lix>
+                            <input type="radio" ng-model="zero" id="s-option" name="selector" ng-value="2" required>
+                            <label for="s-option" class="element-animation">{{vm.some_object[1].answers[1]}}</label>
+                            <div class="check">
+                                <div class="inside"></div>
+                            </div>
+                        </lix>
+
+                        <lix>
+                            <input type="radio" ng-model="zero" id="t-option" name="selector" ng-value="3" required>
+                            <label for="t-option" class="element-animation">{{vm.some_object[1].answers[2]}}</label>
+                            <div class="check">
+                                <div class="inside"></div>
+                            </div>
+                        </lix>
+                    </ulx>
+
+                </div>
+                <div class="row">
+                    <br>
+                    <div class= "col-md-4"></div>
+                    <div class="col-md-4">
+                        <!-- <button type="button" class="btn btn-success btn-md">Previous</button> -->
+                        <button type="submit" ng-disabled="q1.selector.$invalid" style="width:20em; background-color:#68e866 !important;" class="btn btn-lg">Next</button> 
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <!-- <span ng-show="q1.selector.$invalid">Must select one!.</span> -->
+            </form>
+            </div>
+                      
+            <div ng-switch-when="1">
+                <form  name= "q2" ng-submit="vm.answerArray(1,one)">
+                <!-- 2nd question -->
+                <div class="row">
+                    <br>
+                <div class="question">
+                    <h3>
+                        <span class="label label-warning" id="qid">2</span>
+                        <span id="question"> {{vm.some_object[2].questionText}}</span>
+                    </h3>
+                </div>
+                <ulx>
+                    <lix>
+                        <input type="radio" ng-model="one" id="f-option" name="selector1" ng-value="1" required>
+                        <label for="f-option" class="element-animation">{{vm.some_object[2].answers[0]}}</label>
+                        <div class="check"></div>
+                    </lix>
+
+                    <lix>
+                        <input type="radio" ng-model="one" id="s-option" name="selector1" ng-value="2" required>
+                        <label for="s-option" class="element-animation">{{vm.some_object[2].answers[1]}}</label>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </lix>
+                </ulx>
+            </div>
+            <div class="row">
+                    <br>
+                    <div class= "col-md-4"></div>
+                    <div class="col-md-4">
+                        <!-- <button type="button" class="btn btn-success btn-md">Previous</button> -->
+                        <button type="submit" ng-disabled="q2.selector1.$invalid" style="width:20em; background-color:#68e866 !important;" class="btn btn-lg">Next</button> <!--Check if this works-->
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </form>
+            </div>
+            <div ng-switch-when="2">
+                <form  name= "q3" ng-submit="vm.answerArray(2,two)">
+                    <!-- 2nd question -->
+                    <div class="row">
+                        <br>
+                    <div class="question">
+                        <h3>
+                            <span class="label label-warning" id="qid">3</span>
+                            <span id="question"> {{vm.some_object[3].questionText}}</span>
+                        </h3>
+                    </div>
+                    <ulx>
+                        <lix>
+                            <input type="radio" ng-model="two" id="f-option" name="selector2" ng-value="1" required>
+                            <label for="f-option" class="element-animation">{{vm.some_object[3].answers[0]}}</label>
+                            <div class="check">
+                                    <div class="inside"></div>
+                            </div>
+                        </lix>
+    
+                        <lix>
+                            <input type="radio" ng-model="two" id="s-option" name="selector2" ng-value="2" required>
+                            <label for="s-option" class="element-animation">{{vm.some_object[3].answers[1]}}</label>
+                            <div class="check">
+                                <div class="inside"></div>
+                            </div>
+                        </lix>
+                        <lix>
+                            <input type="radio" ng-model="two" id="t-option" name="selector2" ng-value="3" required>
+                            <label for="t-option" class="element-animation">{{vm.some_object[3].answers[2]}}</label>
+                            <div class="check">
+                                
+                            </div>
+                        </lix>
+                        <lix>
+                            <input type="radio" ng-model="two" id="u-option" name="selector2" ng-value="4" required>
+                            <label for="u-option" class="element-animation">{{vm.some_object[3].answers[3]}}</label>
+                            <div class="check">
+                                <div class="inside"></div>
+                            </div>
+                        </lix>
+                    </ulx>
+                </div>
+                <div class="row">
+                        <br>
+                        <div class= "col-md-4"></div>
+                        <div class="col-md-4">
+                            <!-- <button type="button" class="btn btn-success btn-md">Previous</button> -->
+                            <button type="submit" ng-disabled="q3.selector2.$invalid" style="width:20em; background-color:#68e866 !important;" class="btn btn-lg">Next</button> <!--Check if this works-->
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </form>
+                </div>
+                <div ng-switch-when="3">
+                    <form  name= "q4" ng-submit="vm.answerArray(3,three)">
+                        <!-- 2nd question -->
+                        <div class="row">
+                            <br>
+                        <div class="question">
+                            <h3>
+                                <span class="label label-warning" id="qid">4</span>
+                                <span id="question"> {{vm.some_object[4].questionText}}</span>
+                            </h3>
+                        </div>
+                        <ulx>
+                            <lix>
+                                <input type="radio" ng-model="three" id="f-option" name="selector3" ng-value="1" required>
+                                <label for="f-option" class="element-animation">{{vm.some_object[4].answers[0]}}</label>
+                                <div class="check"></div>
+                            </lix>
+        
+                            <lix>
+                                <input type="radio"  ng-model="three" id="s-option" name="selector3" ng-value="2" required>
+                                <label for="s-option" class="element-animation">{{vm.some_object[4].answers[1]}}</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </lix>
+                        </ulx>
+                    </div>
+                    <div class="row">
+                            <br>
+                            <div class= "col-md-4"></div>
+                            <div class="col-md-4">
+                                <!-- <button type="button" class="btn btn-success btn-md">Previous</button> -->
+                                <button type="submit" ng-disabled="q4.selector3.$invalid" style="width:20em; background-color:#68e866 !important;" class="btn btn-lg">Next</button> <!--Check if this works-->
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </form>
+                    </div>
+                    <div ng-switch-when="4">
+                       
+                    </div>
+           
+                    
+
+        </div>
+    </div>
+    
+</body>

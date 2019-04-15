@@ -12,11 +12,26 @@
                 <p>{{test[2]}}</p>
                 <h5>Recipe:</h5>
                 <p>{{test[1]}}</p>
+                <h5>Alcohol Content:</h5>
+                <p>{{vm.abv | number:0}}%</p>
             </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-12">
+                <br>
+            <p style= "color: rgb(104, 102, 102); font-size: 9px">*The alcohol content percentages are averages and users should use their own discretion when drinking alcoholic beverages.</p>
+        </div>
         </div>
     </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="vm.close()">Close</button>
+            <label style="float:left;" class="custom-checkbox">
+                    <input type="checkbox" id="id-of-input" />
+                    <i class="glyphicon glyphicon-heart-empty"></i>
+                    <i class="glyphicon glyphicon-heart"></i>
+                </label>
+        <button type="button" class="btn btn-success btn-md">Add to BAC</button>
+        
+        
     </div>
     </div>
 <div ng-bind="imcheap"></div>
