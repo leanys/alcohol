@@ -38,14 +38,6 @@
         'drinkArray': []
       }
     })
-    .state('favorite', {
-      url: '/favoriteDrinks',
-      templateUrl: '/modules/core/client/views/favorite.client.view.html',
-      data: {
-        pageTitle: 'Favorite Drink'
-      }
-    })
-    
     .state('day', {
       url: '/drinkOfTheDay',
       templateUrl: '/modules/core/client/views/day.client.view.html',
