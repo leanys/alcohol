@@ -1,0 +1,20 @@
+<div id="products" class="row list-group">
+  <div class="row">
+      <div class="item col-md-12">
+          <div class="thumbnail" ng-repeat="x in vm.records"  style=" display: inline-block; width: 30%; margin-right:20px;">
+                  <img class="group list-group-image" src={{x.src}} alt="" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)"/>
+                  <div class="caption" ng-click="vm.openModal(x.name, x.recipe, x.ingredients, x.src)">
+                      <h4 class="group inner list-group-item-heading">
+                          {{x.name}}</h4>
+                      <p class="group inner list-group-item-text">
+                          {{x.recipe}}</p>
+                  </div>
+              <div class="row">
+              </div>
+              <div class ="row" ng-bind="ImCheap"></div>
+
+          </div>
+
+      </div>
+  </div>
+</div>
