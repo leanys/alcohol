@@ -13,7 +13,6 @@ function dayController($scope, $stateParams) {
   vm.records = [];
   var len = $stateParams['drinkArray'].length;
   var drinkArray = $stateParams['drinkArray'];
-  console.log(drinkArray[0].name);
 
     for(var i = 0; i < len; i++)
     {
