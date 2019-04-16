@@ -61,7 +61,7 @@
       function displayDrinks(data) 
       {
         drinkArray = [];
-        if(data.data.drinks.length === null)
+        if(data.drinks.length === null)
         {
           return drinkArray;
         }

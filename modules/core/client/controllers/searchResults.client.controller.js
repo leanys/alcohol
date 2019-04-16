@@ -7,7 +7,7 @@
     
       SearchResultsController.$inject = ['$scope', '$state','$stateParams', '$uibModal', 'Authentication','DrinksService'];
   
-    function SearchResultsController($scope, $state, $stateParams, $uibModal, Authentication,DrinksService, drink ) {
+    function SearchResultsController($scope, $state, $stateParams, $uibModal, Authentication, DrinksService, drink ) {
         
         var vm = this;
         
@@ -15,26 +15,43 @@
         vm.drink = drink;
         var len = $stateParams['drinkArray'].length;
         var drinkArray = $stateParams['drinkArray'];
-        if(drinkArray = [])
-        {
-         //TODO $state.go
-        }
+        // if(drinkArray = [])
+        // {
+        //  //TODO $state.go
+        // }
         vm.openModal = openModal;
         vm.authentication = Authentication;
 
         function calcAlc(ingr){
-          var liquor = 0;
+          var hardLiquor = 0;
+          var beer = 0;
+          var champagne = 0;
           var temp = "";
+          var sendToBAC = 0;
           for(var i=0; i<ingr.length+1; i++){
             if (ingr[i] == " " || ingr[i] == ","||i == ingr.length) {
               var t = temp.toLowerCase();
-              console.log(t);
+              //console.log(t);
               //these are all 40 abv or 80 proof
-              if(t =="bacardi" || t=="whiskey" || t=="gin" || t=="tequila"||t=="brandy" ||t=="vodka" ||t=="rum" || 
-              t=="sec"|| t=="liqueur" || t=="absolut" || t=="kahlua"|| t=="sambuca" ||t=="marnier" ||t=="cognac"){
-                ++liquor;
-                console.log(t);
-                console.log(liquor);
+              if(t =="bacardi" ||t=="cointreau" || t=="whiskey" ||t=="daniels"||t=="gin" || t=="tequila"||t=="brandy" ||t=="vodka"||t=="mezcal"||t=="everclear"||t=="bourbon" ||t=="amaretto"||t=="rum" || 
+              t=="sec"|| t=="liqueur" || t=="absolut" || t=="kahlua"|| t=="sambuca" ||t=="marnier" ||t=="cognac"|| t=="jägermeister" || t=="goldschlager"||t=="alcohol"){
+                ++hardLiquor;
+                // console.log(t);
+                // console.log(hardLiquor);
+                temp = "";
+                t = ""
+                ++i;
+                if(ingr[i] == " " || ingr[i] == ","){++i;}
+              }
+              else if(t=="lager"||t=="beer"||t=="guinness"||t=="ale"){
+                ++beer;
+                temp = "";
+                t = ""
+                ++i;
+                if(ingr[i] == " " || ingr[i] == ","){++i;}
+              }
+              else if(t=="vermouth"|| t=="champagne"||t=="wine"||t=="port"|| t=="schnapps"|| t=="advocaat"||t=="prosecco"){
+                ++champagne;
                 temp = "";
                 t = ""
                 ++i;
@@ -55,8 +72,7 @@
           beer = beer * 4 * .045;
           champagne = champagne * 2.5 * .15;
           sendToBAC = champagne + beer + hardLiquor; 
-          vm.abv = sendToBAC/8.5;
-          return sendtoBAC;
+          return sendToBAC;
         }
         
         vm.createDrink = function (name,recipe,ingredients,favorite,bac,img) {
