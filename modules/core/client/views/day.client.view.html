@@ -19,7 +19,7 @@
                         <h2>Recipe:</h2>
                         <p>{{x.recipe}}</p>
                         <br>
-                                <a href="#" class="btn btn-md btn-danger">Add to Favorites <span class="glyphicon glyphicon-heart-empty"></span></a>
+                                <button type="button" ng-click="vm.createDrink(x.name,x.recipe,x.ingredients,true,false,x.src)" class="btn btn-md btn-danger">Add to Favorites <span class="glyphicon glyphicon-heart-empty"></span></button>
                                 <button type="button" class="btn btn-success btn-md">Add to BAC</button>        
                     </div>
                     

@@ -4,11 +4,12 @@ angular
 .module('core')
 .controller('modalController', modalController);
 
-modalController.$inject = ['$scope', '$state','$stateParams', '$uibModal', '$uibModalInstance', 'Authentication','headerService','test'];
+modalController.$inject = ['$scope', '$state','$stateParams', '$uibModal', '$uibModalInstance', 'Authentication','headerService','test', 'DrinksService'];
 
-  function modalController($scope, $state, $stateParams, $uibModal,$uibModalInstance , Authentication, headerService, test) {
+  function modalController($scope, $state, $stateParams, $uibModal,$uibModalInstance , Authentication, headerService, test, DrinksService) {
     var vm = this;
     vm.close = close;
+    vm.authentication = Authentication;
     $scope.test = test;
      vm.abv = 0;
     calcAlc(test[2])
@@ -68,7 +69,35 @@ modalController.$inject = ['$scope', '$state','$stateParams', '$uibModal', '$uib
       sendToBAC = champagne + beer + hardLiquor; 
       vm.abv = sendToBAC/8.5;
       vm.abv= vm.abv *100;
+      return sendToBAC;
     }
+
+
+    vm.createDrink = function (name,recipe,ingredients,favorite,bac,img) {
+      var date = Date.now();
+      var currDate = new Date(parseInt(date, 10));
+      var abv = calcAlc(ingredients);
+      console.log(abv)
+      
+      var drink = new DrinksService({
+        userId: vm.authentication.user.email,
+        drinkInfo: {
+          name: name,
+          recipe: recipe,
+          ingredients: ingredients,
+          abv: abv,
+          img: img
+        },
+        favorite : favorite,
+        bac : bac,
+        time : currDate
+      });
+      drink.$save(function (response) {
+        console.log("sent");
+      }, function (errorResponse) {
+        $scope.error = errorResponse.data.message;
+      });
+    };
   }
 
 }());

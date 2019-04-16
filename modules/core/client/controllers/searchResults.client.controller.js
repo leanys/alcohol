@@ -15,10 +15,6 @@
         vm.drink = drink;
         var len = $stateParams['drinkArray'].length;
         var drinkArray = $stateParams['drinkArray'];
-        // if(drinkArray = [])
-        // {
-        //  //TODO $state.go
-        // }
         vm.openModal = openModal;
         vm.authentication = Authentication;
 

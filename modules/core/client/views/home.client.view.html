@@ -73,21 +73,24 @@
 
       <div class="row">
         <div class="col-sm-4 my-4" >
-          <div class="card" style=  "text-align: center;">
-            <img class="card-img-top" ui-sref="favorite"src="https://marketplace.canva.com/MADGxxaoWDY/4/screen/canva-clear-drinking-glass-with-slice-lemon-MADGxxaoWDY.jpg" alt="" style="width:250px;height:250px;"">
-            <div class="card-body">
-              <h6 class="card-title" style="font-size: 20px;">Favorite Drinks</h4>
-              
-            </div>
-           <!--<span ng-if="vm.authentication.user">
-                <div class="card-footer">
-                  <a ui-sref="favorite" class="btn btn-primary">My Favorite Drinks!</a>
-                </div>
+         
+
+
+           <span ng-if="vm.authentication.user">
+            <div class="card" style=  "text-align: center;">
+              <img class="card-img-top" ui-sref="drinks.view" src="https://marketplace.canva.com/MADGxxaoWDY/4/screen/canva-clear-drinking-glass-with-slice-lemon-MADGxxaoWDY.jpg" alt="" style="width:250px;height:250px;"">
+              <div class="card-body">
+                <h6 class="card-title" style="font-size: 20px;">Favorite Drinks</h4>               
+              </div>
+      </div>
               </span>
               <span ng-if="!vm.authentication.user">
-              <div class="card-footer">
-                <a ui-sref="BACunauth" class="btn btn-primary">My Favorite Drinks!</a> 
-              </div>--> 
+              
+                <div class="card" style=  "text-align: center;">
+                  <img class="card-img-top" ui-sref="forbidden" src="https://marketplace.canva.com/MADGxxaoWDY/4/screen/canva-clear-drinking-glass-with-slice-lemon-MADGxxaoWDY.jpg" alt="" style="width:250px;height:250px;"">
+                  <div class="card-body">
+                    <h6 class="card-title" style="font-size: 20px;">Favorite Drinks</h4>               
+                  </div>
           </div>
         </div>
         <div class="col-sm-4 my-4">

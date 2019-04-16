@@ -170,6 +170,10 @@
       function displayDrinks(data) 
       {
         drinkArray = [];
+        if(data.drinks.length === null)
+        {
+          return drinkArray;
+        }
         for (var i = 0; i < data.drinks.length; i++) 
         {
             if (data.drinks[i].strIngredient1 != "" && data.drinks[i].strIngredient1 != null && data.drinks[i].strIngredient1 != " ")
