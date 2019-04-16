@@ -51,7 +51,12 @@
             temp += ingr[i];
     
           }
-          return liquor;
+          hardLiquor= hardLiquor * 1.5 *.4; // SEND THIS TO BAC amount of liquor multiplied by .4(the proof of alcohol)
+          beer = beer * 4 * .045;
+          champagne = champagne * 2.5 * .15;
+          sendToBAC = champagne + beer + hardLiquor; 
+          vm.abv = sendToBAC/8.5;
+          return sendtoBAC;
         }
         
         vm.createDrink = function (name,recipe,ingredients,favorite,bac,img) {

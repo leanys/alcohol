@@ -25,7 +25,16 @@
           templateUrl: '/modules/drinks/client/views/drinks-favorite.client.view.html',
           controller: 'FavoriteController',
           controllerAs: 'vm',
-        });
+        })
+        .state('dmodal', {
+          url: '/dmodal',
+          templateUrl: '/modules/drinks/client/views/drinks.modal.client.view.html',
+          controller: 'dmodalController',
+          controllerAs: 'vm',
+          data: {
+            pageTitle: 'Modal'
+          }
+        })
     }
   }());
   

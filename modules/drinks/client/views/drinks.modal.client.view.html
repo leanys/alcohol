@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.close()">&times;</button>
+    <h4 class="modal-title">{{test[0]}}</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6">
+                <img src={{test[3]}} alt="" style="width:100%;"/>
+        </div>
+        <div class="col-md-6">
+            <h5>Ingredients:</h5>
+            <p>{{test[2]}}</p>
+            <h5>Recipe:</h5>
+            <p>{{test[1]}}</p>
+            <h5>Alcohol Content:</h5>
+            <p>{{vm.abv | number:0}}%</p>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-12">
+            <br>
+        <p style= "color: rgb(104, 102, 102); font-size: 9px">*The alcohol content percentages are averages and users should use their own discretion when drinking alcoholic beverages.</p>
+    </div>
+    </div>
+</div>
+  <div class="modal-footer">
+        <label style="float:left;" class="custom-checkbox">
+                <input type="checkbox" id="id-of-input" checked/>
+                <i class="glyphicon glyphicon-heart-empty"></i>
+                <i class="glyphicon glyphicon-heart"></i>
+            </label>
+    <button type="button" class="btn btn-success btn-md">Add to BAC</button>
+    
+    
+</div>
+</div>
+<div ng-bind="imcheap"></div>
