@@ -13,7 +13,7 @@
       }, {
         get:{
          method: 'GET',
-         isArray: true
+         isArray: false
         },
         update: {
           method: 'PUT'

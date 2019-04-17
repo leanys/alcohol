@@ -22,13 +22,13 @@ exports.createDrink = function (req, res) {
 
 exports.update = function (req, res) {
   var drink = req.drink;
-
   drink.userId = req.body.userId;
   drink.drinkInfo = {
-    name: req.body.name,
-    recipe: req.body.recipe,
-    ingredients: req.body.ingredients,
-    abv: reqreq.body.abv
+    name: req.body.drinkInfo.name,
+    recipe: req.body.drinkInfo.recipe,
+    ingredients: req.body.drinkInfo.ingredients,
+    abv: req.body.drinkInfo.abv,
+    img: req.body.drinkInfo.img
   };
   drink.favorite = req.body.favorite;
   drink.bac = req.body. bac;
@@ -121,5 +121,4 @@ exports.drinkByUserB = function(req, res, next, buser) {
     }
   });
 };
- 
- 
+

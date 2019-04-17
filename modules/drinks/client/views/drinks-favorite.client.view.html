@@ -12,14 +12,14 @@
               <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <label class="custom-checkbox">
-                                    <input ng-click="vm.createDrink(x.name,x.recipe,x.ingredients,true,false,x.src)" type="checkbox" id="id-of-input" checked/>
+                                    <input ng-click="vm.deleteDrink(x.name)" type="checkbox" id="id-of-input" checked/>
     
                                     <i class="glyphicon glyphicon-heart-empty"></i>
                                     <i class="glyphicon glyphicon-heart"></i>
                                 </label>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <button ng-click="vm.createDrink(x.name,x.recipe,x.ingredients,false,true,x.src)" type="button" class="btn btn-success btn-lg">Add to BAC</button>
+                                <button ng-click="vm.createDrink(x.name,x.recipe,x.ingredients,false,true,x.src)" ui-sref="BACauth" type="button" class="btn btn-success btn-lg">Add to BAC</button>
                             </div>
               </div>
               <div class ="row" ng-bind="ImCheap"></div>
