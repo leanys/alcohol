@@ -77,7 +77,6 @@
         
         vm.createDrink = function (name,recipe,ingredients,favorite,bac,img) {
           var date = Date.now();
-          var currDate = new Date(parseInt(date, 10));
           var abv = calcAlc(ingredients);
           console.log(abv)
           
@@ -92,7 +91,7 @@
             },
             favorite : favorite,
             bac : bac,
-            time : currDate
+            time : date
           });
           drink.$save(function (response) {
             console.log("sent");

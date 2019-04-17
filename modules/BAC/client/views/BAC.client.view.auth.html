@@ -56,13 +56,13 @@
                                 </div>
                                 <div class="row" style="margin-left: 140px;">
                                         
-                                        <button type="submit" class="btn btn-md" ng-click="vm.calculate()" class="btn btn-primary"
+                                        <button type="submit" class="btn btn-md" ng-click="vm.addDrink()" class="btn btn-primary"
                                             style="background-color: #68e866; width: 120px">Calculate</button>
                                     </div>
                                 <br>
                             </uib-tab>
                                    
-                                    <uib-tab heading="Drink Log">
+                                    <uib-tab heading="Drink Log" ng-click="vm.loadDrinks()">
                                             <br><br>
                                             <div style="overflow:scroll; height:300px;">
                                                     <table class="table">
@@ -77,13 +77,13 @@
         
                                                               </tr>
                                                             </thead>
-                                                            <tbody ng-repeat="x in vm.drinksGiven">
+                                                            <tbody ng-repeat="x in vm.records">
                                                               <tr>
-                                                                <td>{{x}}</td>
-                                                                <td>Otto</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                                <td><span class="table-remove"><button type="button" class="btn btn-sm" style="background-color: #D8FFD2">Remove</button></span></td>
+                                                                <td>{{x.percent}}</td>
+                                                                <td>{{x.numberOf}}</td>
+                                                                <td>{{x.size}}</td>
+                                                                <td>{{x.hours}}</td>
+                                                                <td><span class="table-remove"><button type="button" ng-click="vm.deleteDrink(x.percent, x.numberOf, x.size, x.hours)" class="btn btn-sm" style="background-color: #D8FFD2">Remove</button></span></td>
                                                               </tr>
                                                             </tbody>
                                                           </table>
